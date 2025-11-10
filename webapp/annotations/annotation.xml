@@ -16,39 +16,15 @@
                         <PropertyValue Property="Data">
                             <Collection>
                                 <Record Type="UI.DataField">
-                                    <PropertyValue Property="Value" Path="createdAt"/>
-                                </Record>
-                                <Record Type="UI.DataField">
-                                    <PropertyValue Property="Value" Path="createdBy"/>
-                                </Record>
-                                <Record Type="UI.DataField">
-                                    <PropertyValue Property="Value" Path="LastChangedAt"/>
-                                </Record>
-                                <Record Type="UI.DataField">
-                                    <PropertyValue Property="Value" Path="LastChangedBy"/>
-                                </Record>
-                                <Record Type="UI.DataField">
-                                    <PropertyValue Property="Label" String="CustomerID"/>
+                                    <PropertyValue Property="Label" String="{@i18n>customer}"/>
                                     <PropertyValue Property="Value" Path="CustomerID"/>
                                 </Record>
                                 <Record Type="UI.DataField">
-                                    <PropertyValue Property="Label" String="FirstName"/>
-                                    <PropertyValue Property="Value" Path="FirstName"/>
+                                    <PropertyValue Property="Value" Path="CountryCode_code"/>
+                                    <PropertyValue Property="Label" String="{@i18n>countryCode}"/>
                                 </Record>
                                 <Record Type="UI.DataField">
-                                    <PropertyValue Property="Label" String="LastName"/>
-                                    <PropertyValue Property="Value" Path="LastName"/>
-                                </Record>
-                                <Record Type="UI.DataField">
-                                    <PropertyValue Property="Label" String="Title"/>
-                                    <PropertyValue Property="Value" Path="Title"/>
-                                </Record>
-                                <Record Type="UI.DataField">
-                                    <PropertyValue Property="Label" String="Street"/>
-                                    <PropertyValue Property="Value" Path="Street"/>
-                                </Record>
-                                <Record Type="UI.DataField">
-                                    <PropertyValue Property="Label" String="PostalCode"/>
+                                    <PropertyValue Property="Label" String="{@i18n>postalCode}"/>
                                     <PropertyValue Property="Value" Path="PostalCode"/>
                                 </Record>
                                 <Record Type="UI.DataField">
@@ -56,18 +32,8 @@
                                     <PropertyValue Property="Value" Path="City"/>
                                 </Record>
                                 <Record Type="UI.DataField">
-                                    <PropertyValue Property="Value" Path="CountryCode_code"/>
-                                </Record>
-                                <Record Type="UI.DataField">
-                                    <PropertyValue Property="Label" String="PhoneNumber"/>
-                                    <PropertyValue Property="Value" Path="PhoneNumber"/>
-                                </Record>
-                                <Record Type="UI.DataField">
-                                    <PropertyValue Property="Label" String="EMailAddress"/>
-                                    <PropertyValue Property="Value" Path="EMailAddress"/>
-                                </Record>
-                                <Record Type="UI.DataField">
-                                    <PropertyValue Property="Value" Path="FullName"/>
+                                    <PropertyValue Property="Label" String="Street"/>
+                                    <PropertyValue Property="Value" Path="Street"/>
                                 </Record>
                             </Collection>
                         </PropertyValue>
@@ -119,6 +85,46 @@
                         <PropertyPath>City</PropertyPath>
                         <PropertyPath>PostalCode</PropertyPath>
                     </Collection>
+                </Annotation>
+                <Annotation Term="UI.HeaderFacets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="{@i18n>contactDetails}"/>
+                            <PropertyValue Property="ID" String="i18ncontactDetails"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#i18ncontactDetails"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.FieldGroup" Qualifier="i18ncontactDetails">
+                    <Record Type="UI.FieldGroupType">
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="to_Booking/to_Customer/FullName"/>
+                                    <PropertyValue Property="Label" String="{@i18n>fullName}"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="to_Booking/to_Customer/PhoneNumber"/>
+                                    <PropertyValue Property="Label" String="{@i18n>phoneNumber}"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="to_Booking/to_Customer/EMailAddress"/>
+                                    <PropertyValue Property="Label" String="{@i18n>emailAddress}"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="{@i18n>customer}"/>
+                        <PropertyValue Property="TypeNamePlural" String="{@i18n>appTitle}"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Value" Path="FullName"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
                 </Annotation>
             </Annotations>
             <Annotations Target="TravelService.Passenger/City">
